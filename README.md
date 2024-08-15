@@ -27,8 +27,9 @@ This project is a machine learning-based system designed to detect phishing emai
 
 1. Load the provided `.pkl` file to use the pre-trained model:
     ```python
-    import pickle
-    model = pickle.load(open('phishing_model.pkl', 'rb'))
+    import joblib
+    model = joblib.load('phishing_model.pkl')
+    vectorizer = joblib.load('vectorizer.pkl')
     ```
 2. Transform new email data using the vectorizer:
     ```python
@@ -38,7 +39,7 @@ This project is a machine learning-based system designed to detect phishing emai
 3. Predict if the email is phishing:
     ```python
     prediction = model.predict(new_email_transformed)
-    print("Phishing" if prediction[0] == 1 else "Safe")
+    print("Predicted class:", prediction)
     ```
 
 ### Project Structure
@@ -49,7 +50,10 @@ This project is a machine learning-based system designed to detect phishing emai
 
 ### Screenshots
 
-- *Include images showing the notebook, confusion matrix, and example predictions here.*
+- ![image](https://github.com/user-attachments/assets/3007f773-c309-4da4-b990-95785f022129)
+- ![image](https://github.com/user-attachments/assets/c179ac31-7989-4be5-8c6c-dd92ee31f000)
+
+
 
 ### Contributing
 
